@@ -1,0 +1,234 @@
+<template>
+    <lightning-card icon-name="standard:performance"  >
+        <h1 slot="title" class="cardTitle">{Title}</h1>
+
+        <lightning-layout class="slds-p-horizontal_xx-small slds-p-vertical_small">
+            <lightning-layout-item padding="horizontal-small" size="6">
+                <div class="slds-box slds-text-align_center">
+                    <div class="slds-text-heading_small slds-text-align_center">
+                        {kpiTitle1}
+                    </div>            
+                
+                    <div if:true={kpiSign1} class="kpi-positive slds-text-align_center">
+                        {kpiValue1}
+                    </div>
+                    <div if:false={kpiSign1} class="kpi-negative slds-text-align_center">
+                        {kpiValue1}
+                    </div>
+                    
+    
+                    
+                </div>
+
+            </lightning-layout-item>
+            <lightning-layout-item padding="horizontal-small" size="6">
+                <div class="slds-box slds-text-align_center">
+                    <div class="slds-text-heading_small slds-text-align_center">
+                        {kpiTitle2}
+                    </div>            
+                
+                    <div if:true={kpiSign2} class="kpi-positive slds-text-align_center">
+                        {kpiValue2}
+                    </div>
+                    <div if:false={kpiSign2} class="kpi-negative slds-text-align_center">
+                        {kpiValue2}
+                    </div>
+                </div>
+
+            </lightning-layout-item>
+        </lightning-layout>        
+        
+        <div class="progress-bar-container slds-p-horizontal_medium">
+
+            <div class="slds-media slds-p-top_small">
+                
+                <div class="slds-media__figure ">
+                    <lightning-icon 
+                        icon-name={activityIcon1} 
+                        size="medium" 
+                        class="icon">
+                    </lightning-icon>            
+                </div>
+                
+                
+
+                <div class="slds-media__body slds-m-left_x-small">
+                    <div class="slds-text-body_regular slds-m-bottom_xx-small">
+                        {activitiesCompleted1} &nbsp; {activitiesDescription1}
+                    </div>
+                    
+                        <div if:true={conditional1}>
+                            <lightning-progress-bar variant="circular" value={progress1} >
+                                
+
+                            </lightning-progress-bar>
+                            
+                            <div class="slds-text-body_regular slds-text-color_weak slds-text-align_right slds-m-top_xx-small">
+                                Personal Best: {personalBest1} 
+                            </div>
+                            
+                        </div>
+
+                        <div if:false={conditional1} >
+                            <lightning-progress-bar variant="circular" value="100" >
+                                
+
+                            </lightning-progress-bar>
+                            
+                            <div class="slds-text-body_regular slds-text-color_weak slds-text-align_right slds-m-top_xx-small text-bold">
+                                New Personal Best: {activitiesCompleted1} 
+                            </div>
+                            
+                        </div>
+                        
+                </div>
+                
+                
+            </div>
+
+            <div class="slds-media slds-p-top_small ">
+                
+                <div class="slds-media__figure ">
+                    <lightning-icon 
+                        icon-name={activityIcon2} 
+                        size="medium" 
+                        class="icon">
+                    </lightning-icon>            
+                </div>
+                
+                
+
+                <div class="slds-media__body slds-m-left_x-small">
+                    <div class="slds-text-body_regular slds-m-bottom_xx-small">
+                        {activitiesCompleted2} &nbsp; {activitiesDescription2}
+                    </div>
+                
+                        <div if:true={conditional2}>
+                            <lightning-progress-bar variant="circular" value={progress2}>
+                                
+
+                            </lightning-progress-bar>
+                            
+                            <div class="slds-text-body_regular slds-text-color_weak slds-text-align_right slds-m-top_xx-small">
+                                Personal Best: {personalBest2} 
+                            </div>
+                            
+                        </div>
+
+                        <div if:false={conditional2} >
+                            <lightning-progress-bar variant="circular" value="100">
+                                
+
+                            </lightning-progress-bar>
+                            
+                            <div class="slds-text-body_regular slds-text-color_weak slds-text-align_right slds-m-top_xx-small text-bold">
+                                New Personal Best: {activitiesCompleted2} 
+                            </div>
+                            
+                        </div>
+                        
+                </div>
+                
+                
+            </div>
+
+            <div class="slds-media slds-p-top_small ">
+                
+                <div class="slds-media__figure ">
+                    <lightning-icon 
+                        icon-name={activityIcon3} 
+                        size="medium" 
+                        class="icon">
+                    </lightning-icon>            
+                </div>
+                
+                
+
+                <div class="slds-media__body slds-m-left_x-small">
+                    <div class="slds-text-body_regular slds-m-bottom_xx-small">
+                        {activitiesCompleted3} &nbsp; {activitiesDescription3}
+                    </div>
+                    
+                        <div if:true={conditional3}>
+                            <lightning-progress-bar variant="circular" value={progress3}>
+                                
+
+                            </lightning-progress-bar>
+                            
+                            <div class="slds-text-body_regular slds-text-color_weak slds-text-align_right slds-m-top_xx-small">
+                                Personal Best: {personalBest3} 
+                            </div>
+                            
+                        </div>
+
+                        <div if:false={conditional3} >
+                            <lightning-progress-bar variant="circular" value="100" >
+                                
+
+                            </lightning-progress-bar>
+                            
+                            <div class="slds-text-body_regular slds-text-color_weak slds-text-align_right slds-m-top_xx-small text-bold">
+                                New Personal Best: {activitiesCompleted3} 
+                            </div>
+                            
+                        </div>
+                        
+                </div>
+                
+                
+            </div>
+
+            <div class="slds-media slds-p-top_small slds-p-bottom_xx-small">
+                
+                <div class="slds-media__figure ">
+                    <lightning-icon 
+                        icon-name={activityIcon4} 
+                        size="medium" 
+                        class="icon">
+                    </lightning-icon>            
+                </div>
+                
+                
+
+                <div class="slds-media__body slds-m-left_x-small">
+                    <div class="slds-text-body_regular slds-m-bottom_xx-small">
+                        {activitiesCompleted4} &nbsp; {activitiesDescription4}
+                    </div>
+                    
+                        <div if:true={conditional4}>
+                            <lightning-progress-bar variant="circular" value={progress4}>
+                                
+
+                            </lightning-progress-bar>
+                            
+                            <div class="slds-text-body_regular slds-text-color_weak slds-text-align_right slds-m-top_xx-small">
+                                Personal Best: {personalBest4} 
+                            </div>
+                            
+                        </div>
+
+                        <div if:false={conditional4} >
+                            <lightning-progress-bar variant="circular" value="100">
+                                
+
+                            </lightning-progress-bar>
+                            
+                            <div class="slds-text-body_regular slds-text-color_weak slds-text-align_right slds-m-top_xx-small text-bold">
+                                New Personal Best: {activitiesCompleted4} 
+                            </div>
+                            
+                        </div>
+                        
+                </div>
+                
+                
+            </div>
+
+        </div>    
+
+
+
+
+    </lightning-card>
+    
+</template>
